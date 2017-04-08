@@ -3,6 +3,8 @@
  */
 package com.project.webapp.devtools.date;
 
+import java.sql.Timestamp;
+import java.time.Instant;
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
 import java.util.Date;
@@ -53,5 +55,11 @@ public class DateGenerator {
 		LocalDate localDate = LocalDate.now();
 		return localDate.minusDays(id);
 	}
+	
+	@RequestMapping(value="generate/timestamp",method=RequestMethod.GET)
+	public Timestamp timestampGenerator(){
+		return Timestamp.from(Instant.now());
+	}
+	
 	
 }
