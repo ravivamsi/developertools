@@ -20,5 +20,7 @@ public class ConstantValues {
 	public static final String AT = "@";
 	
 	public static final String ROOT_LOGGER_NAME = "myLogging";
+	
+	public static final String RAW_KEY = "qsdcqdgqkuhbvasjvlaksjbvaksbvsdyufhbksjvbdhshdbvakjbhvksjhvc"; 
 
 }
