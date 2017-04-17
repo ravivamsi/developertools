@@ -27,4 +27,14 @@ public class ConstantValues {
 	
 	public static final String RAW_KEY = "qsdcqdgqkuhbvasjvlaksjbvaksbvsdyufhbksjvbdhshdbvakjbhvksjhvc"; 
 
+	public static final double KGLB = 2.20462;
+	public static final double THOUSAND = 1000;
+	public static final double HUNDRED = 100;
+	public static final double OZKG = 0.028349523125;
+	public static final double CARATKG = 0.0002;
+	public static final double QUARTERUS= 11.33980925;
+	public static final double QUARTERUK= 12.70058636;
+	public static final double STONEUS= 5.669904625;
+	public static final double STONEUK= 6.35029318;
+	
 }
