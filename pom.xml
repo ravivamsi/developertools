@@ -66,18 +66,6 @@
 		    <artifactId>json</artifactId>
 		    <version>20160810</version>
 		</dependency>
-				<!-- https://mvnrepository.com/artifact/org.apache.commons/commons-lang3 -->
-		<dependency>
-		    <groupId>org.apache.commons</groupId>
-		    <artifactId>commons-lang3</artifactId>
-		    <version>3.5</version>
-		</dependency>
-			<!-- https://mvnrepository.com/artifact/org.bitbucket.dollar/dollar -->
-<dependency>
-    <groupId>org.bitbucket.dollar</groupId>
-    <artifactId>dollar</artifactId>
-    <version>1.0-beta2</version>
-</dependency>
 				
 	</dependencies>
 
