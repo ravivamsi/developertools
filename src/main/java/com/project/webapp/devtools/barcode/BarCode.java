@@ -22,6 +22,7 @@ import com.google.zxing.BarcodeFormat;
 import com.google.zxing.EncodeHintType;
 import com.google.zxing.WriterException;
 import com.google.zxing.common.BitMatrix;
+import com.google.zxing.oned.CodaBarWriter;
 import com.google.zxing.qrcode.QRCodeWriter;
 import com.google.zxing.qrcode.decoder.ErrorCorrectionLevel;
 
@@ -47,9 +48,9 @@ public class BarCode {
 			hintMap.put(EncodeHintType.MARGIN, 1); /* default = 4 */
 			hintMap.put(EncodeHintType.ERROR_CORRECTION, ErrorCorrectionLevel.L);
 	
-			QRCodeWriter qrCodeWriter = new QRCodeWriter();
+			CodaBarWriter codabarWriter = new CodaBarWriter();
 			
-			BitMatrix byteMatrix = qrCodeWriter.encode(id, BarcodeFormat.CODABAR, size,
+			BitMatrix byteMatrix = codabarWriter.encode(id, BarcodeFormat.CODABAR, size,
 					size, hintMap);
 			
 			int CrunchifyWidth = byteMatrix.getWidth();

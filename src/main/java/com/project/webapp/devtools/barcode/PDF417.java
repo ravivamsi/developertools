@@ -22,7 +22,8 @@ import com.google.zxing.BarcodeFormat;
 import com.google.zxing.EncodeHintType;
 import com.google.zxing.WriterException;
 import com.google.zxing.common.BitMatrix;
-import com.google.zxing.qrcode.QRCodeWriter;
+import com.google.zxing.oned.Code39Writer;
+import com.google.zxing.pdf417.PDF417Writer;
 import com.google.zxing.qrcode.decoder.ErrorCorrectionLevel;
 
 /**
@@ -30,14 +31,14 @@ import com.google.zxing.qrcode.decoder.ErrorCorrectionLevel;
  *
  */
 @RestController
-public class QRCode {
+public class PDF417 {
 
-	@RequestMapping(value="/barcode/{id}/qrcode", method=RequestMethod.GET)
+	@RequestMapping(value="/barcode/{id}/pdf417", method=RequestMethod.GET)
 	public void generateBarCode(@PathVariable String id){
 		
 		int size = 250;
 		String fileType = "png";
-		String filePath = "file://C:/Testing/QRGenerated.png";
+		String filePath = "file://C:/Testing/Code128Generated.png";
 		File myFile = new File(filePath);
 		
 		try{
@@ -46,10 +47,10 @@ public class QRCode {
 	
 			hintMap.put(EncodeHintType.MARGIN, 1); /* default = 4 */
 			hintMap.put(EncodeHintType.ERROR_CORRECTION, ErrorCorrectionLevel.L);
+				
+			PDF417Writer pdf417Writer = new PDF417Writer();
 	
-			QRCodeWriter qrCodeWriter = new QRCodeWriter();
-			
-			BitMatrix byteMatrix = qrCodeWriter.encode(id, BarcodeFormat.QR_CODE, size,
+			BitMatrix byteMatrix = pdf417Writer.encode(id, BarcodeFormat.PDF_417, size,
 					size, hintMap);
 			
 			int CrunchifyWidth = byteMatrix.getWidth();
@@ -71,23 +72,6 @@ public class QRCode {
 				}
 			}
 			
-			
-			/*
-			 * //  Write Barcode
-            bitMatrix = new Code128Writer().encode("123456789", BarcodeFormat.CODE_128, 150, 80, null);
-            MatrixToImageWriter.writeToStream(bitMatrix, "png", new FileOutputStream(new File("D://code128_123456789.png")));
-            System.out.println("Code128 Barcode Generated.");
-//  Write QR Code
-            bitMatrix = writer.encode("123456789", BarcodeFormat.QR_CODE, 200, 200);
-            MatrixToImageWriter.writeToStream(bitMatrix, "png", new FileOutputStream(new File("D://qrcode_123456789.png")));
-            System.out.println("QR Code Generated.");
-//  Write PDF417
-            writer = new PDF417Writer();
-            bitMatrix = writer.encode("123456789", BarcodeFormat.PDF_417, 80, 150);
-            MatrixToImageWriter.writeToStream(bitMatrix, "png", new FileOutputStream(new File("D://pdf417_123456789.png")));
-            System.out.println("PDF417 Code Generated.");
-            
-            */
 			ImageIO.write(image, fileType, myFile);
 		
 		}
@@ -97,6 +81,5 @@ public class QRCode {
 			e.printStackTrace();
 		}
 	}
-
 
 }
