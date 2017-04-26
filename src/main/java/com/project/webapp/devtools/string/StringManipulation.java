@@ -5,6 +5,7 @@ package com.project.webapp.devtools.string;
 
 
 
+import org.apache.commons.lang3.text.WordUtils;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -45,6 +46,37 @@ public class StringManipulation {
 		return new StringBuilder(string).reverse().toString();
 	}
 	
+	@RequestMapping(value="string/{id}/length",method = RequestMethod.GET)
+	public Integer lengthString(@PathVariable String string){
+		return string.length();
+	}
+	
+	@RequestMapping(value="string/{id}/bytes",method = RequestMethod.GET)
+	public byte[] bytesString(@PathVariable String string){
+		return string.getBytes();
+	}
+	
+	@RequestMapping(value="string/{id}/hashcode",method = RequestMethod.GET)
+	public Integer hashCodeString(@PathVariable String string){
+		return string.hashCode();
+	}
+	
+	@RequestMapping(value="string/{id}/canonical",method = RequestMethod.GET)
+	public String canonicalString(@PathVariable String string){
+		return string.intern();
+	}
+	
+	@RequestMapping(value="string/{id}/chararray",method = RequestMethod.GET)
+	public char[] charArrayString(@PathVariable String string){
+		return string.toCharArray();
+	}
+	
+	@RequestMapping(value="string/{id}/capitalize",method = RequestMethod.GET)
+	public String capitalizeString(@PathVariable String string){
+		return WordUtils.capitalize(string);
+	}
+	
+	
 	@RequestMapping(value="string/{id}/begin/{id}/end/{id}", method = RequestMethod.GET)
 	public String getSubString(@PathVariable String string, @PathVariable("begin") Integer begin, @PathVariable Integer end){
 		return string.substring(begin, end);
@@ -65,5 +97,10 @@ public class StringManipulation {
 		return string.endsWith(suffix);
 	}
 	
+	@RequestMapping(value="string/{id}/regex/{regex}", method = RequestMethod.GET)
+	public Boolean matchesStringRegex(@PathVariable("id") String id, @PathVariable("regex") String regex){
+		return id.matches(regex);
+	}
+		
 	
 }
