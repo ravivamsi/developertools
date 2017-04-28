@@ -37,4 +37,7 @@ public class ConstantValues {
 	public static final double STONEUS= 5.669904625;
 	public static final double STONEUK= 6.35029318;
 	
+	public static final String ZIP_CODE_URL = "https://www.zipcodeapi.com/rest/";
+	public static final String API_KEY_ZIP_CODE = "3TV6GaSaiAy4obOYenoxBKMzx6Go868bZ3hFe9QxKpB8Bq7POwnqg9ZOgGcpMlAL";
+	
 }
