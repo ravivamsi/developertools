@@ -88,6 +88,12 @@
 		  <artifactId>commons-lang3</artifactId>
 		  <version>3.5</version>
 		</dependency>	
+		<!-- https://mvnrepository.com/artifact/org.joda/joda-convert -->
+		<dependency>
+		    <groupId>org.joda</groupId>
+		    <artifactId>joda-convert</artifactId>
+		    <version>1.8.1</version>
+		</dependency>
 	</dependencies>
 
 	<build>
