@@ -18,7 +18,7 @@ public class PrimeNumber {
 	@RequestMapping(value="prime/{id}", method = RequestMethod.GET)
 	public boolean primeNumberChecker(@PathVariable("id") Integer id){
 		
-		for(int i=2;i<id;i++) {
+		for(int i=2;i<id/2;i++) {
 	        if(id%i==0)
 	            return false;
 	    }
