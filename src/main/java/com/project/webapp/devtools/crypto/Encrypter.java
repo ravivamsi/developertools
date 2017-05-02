@@ -32,7 +32,7 @@ public class Encrypter {
 	
 	@RequestMapping(value="encrypt/{id}", method=RequestMethod.GET)
 	public byte[] encryptString(@PathVariable String id){
-		 return Base64.getDecoder().decode(id);
+		 return org.apache.commons.codec.binary.Base64.decodeBase64(id);
 	}
 	
 	
