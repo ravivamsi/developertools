@@ -26,6 +26,23 @@ public class DictionaryModel {
 	
 	@JsonProperty
 	public String example = null;
+	
+	@JsonProperty
+	public String message = null;
+
+	/**
+	 * @return the message
+	 */
+	public String getMessage() {
+		return message;
+	}
+
+	/**
+	 * @param message the message to set
+	 */
+	public void setMessage(String message) {
+		this.message = message;
+	}
 
 	/**
 	 * @return the id

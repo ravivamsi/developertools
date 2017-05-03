@@ -27,7 +27,7 @@ public class Meaning {
 		DictionaryModel dictionaryModel = new DictionaryModel();
 		Map<String, String> variables = new HashMap<String, String>();
 		RestTemplate restTemplate = new RestTemplate();
-		dictionaryModel = restTemplate.getForObject("http://urbanscraper.herokuapp.com/define/"+id, DictionaryModel.class, variables );
+		dictionaryModel = restTemplate.getForObject(ConstantValues.DICTIONARY_URL+id, DictionaryModel.class, variables );
 		
 		return dictionaryModel;
 	}
