@@ -15,8 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.fasterxml.uuid.EthernetAddress;
 import com.fasterxml.uuid.Generators;
 import com.fasterxml.uuid.NoArgGenerator;
-
-import com.datastax.driver.core.utils.*;
+import com.project.webapp.devtools.model.UUIDModel;
 /**
  * @author Vamsi Ravi
  *
@@ -45,16 +44,21 @@ public class IdGenerator {
 	
 	// Generate One UUID Version 4 without dashes 
 	@RequestMapping(value = "generate/uuid4/dash",method=RequestMethod.GET)
-	public String generateOneuuidWithoutDashes(){
-		return UUID.randomUUID().toString().replaceAll("-", "");
+	public UUIDModel generateOneuuidWithoutDashes(){
+		
+		UUIDModel uuidModel = new UUIDModel();
+		uuidModel.setUuid(UUID.randomUUID().toString().replaceAll("-", ""));
+		return uuidModel;
 	}
 	
 	// Generate Multiple UUID Version 4 without dashes
 	@RequestMapping(value = "generate/uuid4/dash/{id}", method=RequestMethod.GET)
-	public List<String> generateMultipleuuidWithoutDashes(@PathVariable Long id){
-		List<String> uuidList = new ArrayList<String>(); 
+	public List<UUIDModel> generateMultipleuuidWithoutDashes(@PathVariable Long id){
+		List<UUIDModel> uuidList = new ArrayList<UUIDModel>(); 
 		for(int i=0; i < id; i++){
-			uuidList.add(UUID.randomUUID().toString().replaceAll("-", ""));
+			UUIDModel uuidModel = new UUIDModel();
+			uuidModel.setUuid(UUID.randomUUID().toString().replaceAll("-", ""));
+			uuidList.add(uuidModel);
 		}
 		return uuidList;
 	}
@@ -77,16 +81,22 @@ public class IdGenerator {
 		
 	// Generate One UUID Version 4 without dashes 
 	@RequestMapping(value = "generate/uuid1/dash",method=RequestMethod.GET)
-	public String generateVersionOneuuidWithoutDashes(){
-		return timeBasedGenerator.generate().toString().replaceAll("-", "");
+	public UUIDModel generateVersionOneuuidWithoutDashes(){
+		UUIDModel uuidModel = new UUIDModel();
+		uuidModel.setUuid(timeBasedGenerator.generate().toString().replaceAll("-", ""));
+		return uuidModel;
+		
 	}
 	
 	// Generate Multiple UUID Version 4 without dashes
 	@RequestMapping(value = "generate/uuid1/dash/{id}", method=RequestMethod.GET)
-	public List<String> generateVersionOneMultipleuuidWithoutDashes(@PathVariable Long id){
-		List<String> uuidList = new ArrayList<String>(); 
+	public List<UUIDModel> generateVersionOneMultipleuuidWithoutDashes(@PathVariable Long id){
+		List<UUIDModel> uuidList = new ArrayList<UUIDModel>(); 
 		for(int i=0; i < id; i++){
-			uuidList.add(timeBasedGenerator.generate().toString().replaceAll("-", ""));
+			UUIDModel uuidModel = new UUIDModel();
+			uuidModel.setUuid(timeBasedGenerator.generate().toString().replaceAll("-", ""));
+			uuidList.add(uuidModel);
+			
 		}
 		return uuidList;
 	}
