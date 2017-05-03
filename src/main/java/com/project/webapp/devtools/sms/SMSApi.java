@@ -3,9 +3,6 @@
  */
 package com.project.webapp.devtools.sms;
 
-import java.text.Normalizer.Form;
-
-import org.apache.coyote.Request;
 import org.json.JSONException;
 import org.json.JSONObject;
 import org.springframework.http.HttpEntity;
@@ -14,10 +11,12 @@ import org.springframework.http.HttpMethod;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
+
 
 /**
  * @author Vamsi Ravi
@@ -63,6 +62,12 @@ public class SMSApi {
 				
 					
 		
+	}
+	
+	@RequestMapping(value="send/sms/{number}/{message}", method=RequestMethod.GET)
+	public String sendShortMessageService(@PathVariable String number,@PathVariable String message){
+		 
+		return message;
 	}
 
 }

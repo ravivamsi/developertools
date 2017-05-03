@@ -39,5 +39,10 @@ public class ConstantValues {
 	
 	public static final String ZIP_CODE_URL = "https://www.zipcodeapi.com/rest/";
 	public static final String API_KEY_ZIP_CODE = "3TV6GaSaiAy4obOYenoxBKMzx6Go868bZ3hFe9QxKpB8Bq7POwnqg9ZOgGcpMlAL";
+	
 	public static final String API_KEY_BANK_VALIDATOR = "a88157207ce622ad216a8bc8b40f0b01";
+	public static final String API_KEY_WEATHER = "e5eca8683b55655a0ceb9a1d58d905d4";
+	public static final String API_KEY_EMAIL_VALIDATOR = "key-b95d9ba1ec38b0125998ef9470a718c9";
+	public static final String API_KEY_PHONENUMBER_VALIDATOR = "1856dd3429c9974962d4ab4982201491";
+	public static final String API_KEY_MASHAPE = "58Lkq0o1JKmshke2gVhQnQByXO3zp18P2mwjsnaIhmQWmKAsr3";
 }
