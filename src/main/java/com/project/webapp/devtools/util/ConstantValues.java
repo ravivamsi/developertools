@@ -39,5 +39,5 @@ public class ConstantValues {
 	
 	public static final String ZIP_CODE_URL = "https://www.zipcodeapi.com/rest/";
 	public static final String API_KEY_ZIP_CODE = "3TV6GaSaiAy4obOYenoxBKMzx6Go868bZ3hFe9QxKpB8Bq7POwnqg9ZOgGcpMlAL";
-	public static final String API_KEY_BANK_VALIDATOR = "";
+	public static final String API_KEY_BANK_VALIDATOR = "a88157207ce622ad216a8bc8b40f0b01";
 }
