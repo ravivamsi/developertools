@@ -1,7 +1,7 @@
 /**
  * 
  */
-package comm.project.webapp.devtools.bible;
+package com.project.webapp.devtools.bible;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -30,6 +30,37 @@ public class Bible {
 	public JSONObject getBookChapter(@PathVariable("book") String book, @PathVariable("chapter") String chapter) throws UnirestException, ParseException{
 		
 		HttpResponse<String> response = Unirest.get("https://ajith-holy-bible.p.mashape.com/GetChapter?Book="+book+"&chapter="+chapter)
+				.header("X-Mashape-Key", "58Lkq0o1JKmshke2gVhQnQByXO3zp18P2mwjsnaIhmQWmKAsr3")
+				.asString();
+		
+		JSONParser parser = new JSONParser();
+		JSONObject json = (JSONObject) parser.parse(response.getBody());
+		return json;
+		
+	}
+	
+	@RequestMapping(value="bible/book/{book}/chapter/{chapter}/versefrom/{versefrom}/verseto/{verseto}", method=RequestMethod.GET)
+	public JSONObject getBookChapterVerseRange(@PathVariable("book") String book,
+			@PathVariable("chapter") String chapter,
+			@PathVariable("versefrom") String versefrom,
+			@PathVariable("verseto") String verseto) throws UnirestException, ParseException{
+		
+		HttpResponse<String> response = Unirest.get("https://ajith-holy-bible.p.mashape.com/GetChapter?Book="+book+"&chapter="+chapter+"&VerseFrom="+versefrom+"&VerseTo="+verseto)
+				.header("X-Mashape-Key", "58Lkq0o1JKmshke2gVhQnQByXO3zp18P2mwjsnaIhmQWmKAsr3")
+				.asString();
+		
+		JSONParser parser = new JSONParser();
+		JSONObject json = (JSONObject) parser.parse(response.getBody());
+		return json;
+		
+	}
+	
+	@RequestMapping(value="bible/book/{book}/chapter/{chapter}/verse/{verse}", method=RequestMethod.GET)
+	public JSONObject getBookChapterVerse(@PathVariable("book") String book,
+			@PathVariable("chapter") String chapter,
+			@PathVariable("versefrom") String verse) throws UnirestException, ParseException{
+		
+		HttpResponse<String> response = Unirest.get("https://ajith-holy-bible.p.mashape.com/GetChapter?Book="+book+"&chapter="+chapter+"&Verse="+verse)
 				.header("X-Mashape-Key", "58Lkq0o1JKmshke2gVhQnQByXO3zp18P2mwjsnaIhmQWmKAsr3")
 				.asString();
 		
