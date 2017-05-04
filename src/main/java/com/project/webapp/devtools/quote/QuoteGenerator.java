@@ -34,29 +34,13 @@ public class QuoteGenerator {
 		return json;
 	}
 
-	@RequestMapping(value="generate/quote", method=RequestMethod.POST)
-	public HttpResponse<JsonNode> generateQuote() throws UnirestException{
-		QuoteModel quoteModel = new QuoteModel();
+	@RequestMapping(value="random/quote", method=RequestMethod.POST)
+	public JSONObject generateRandomQuote() throws UnirestException, ParseException{
+		HttpResponse<String> response = Unirest.get("http://api.forismatic.com/api/1.0/?method=getQuote&key=457653&format=json&lang=en")
+				.asString();
 		
-		HttpResponse<JsonNode> response = Unirest.post("https://andruxnet-random-famous-quotes.p.mashape.com/?cat=movies&count=1")
-				.header("X-Mashape-Key", "58Lkq0o1JKmshke2gVhQnQByXO3zp18P2mwjsnaIhmQWmKAsr3")
-				.header("Content-Type", "application/x-www-form-urlencoded")
-				.header("Accept", "application/json").asJson();
-		
-		return response;
-		
-		/*
-		QuoteModel quoteModel = new QuoteModel();
-		
-		RestTemplate restTemplate = new RestTemplate();
-
-		HttpHeaders headers = new HttpHeaders();
-		headers.setContentType(MediaType.APPLICATION_JSON);//("Content-Type", "application/x-www-form-urlencoded");
-		headers.set("X-Mashape-Key", "58Lkq0o1JKmshke2gVhQnQByXO3zp18P2mwjsnaIhmQWmKAsr3");
-		headers.set("Accept", "application/json");
-		
-		HttpEntity<QuoteModel> entity = new HttpEntity<QuoteModel>(quoteModel,headers);
-		return restTemplate.exchange("https://andruxnet-random-famous-quotes.p.mashape.com/?cat=famous&count=1", HttpMethod.POST,entity, QuoteModel.class).getBody();
-		
-	*/}
+		JSONParser parser = new JSONParser();
+		JSONObject json = (JSONObject) parser.parse(response.getBody());
+		return json;
+		}
 }
