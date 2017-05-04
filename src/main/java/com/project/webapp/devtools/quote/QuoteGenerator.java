@@ -4,16 +4,12 @@
 package com.project.webapp.devtools.quote;
 
 
-import java.util.ArrayList;
-
-import org.springframework.http.HttpEntity;
-import org.springframework.http.HttpHeaders;
-import org.springframework.http.HttpMethod;
-import org.springframework.http.MediaType;
+import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
+import org.json.simple.parser.ParseException;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.client.RestTemplate;
 
 import com.mashape.unirest.http.HttpResponse;
 import com.mashape.unirest.http.JsonNode;
@@ -27,6 +23,16 @@ import com.project.webapp.devtools.model.QuoteModel;
  */
 @RestController 
 public class QuoteGenerator {
+	
+	@RequestMapping(value="today/quote", method=RequestMethod.GET)
+	public JSONObject getTodayQuote() throws UnirestException, ParseException{
+		HttpResponse<String> response = Unirest.get("http://quotes.rest/qod")
+				.asString();
+		
+		JSONParser parser = new JSONParser();
+		JSONObject json = (JSONObject) parser.parse(response.getBody());
+		return json;
+	}
 
 	@RequestMapping(value="generate/quote", method=RequestMethod.POST)
 	public HttpResponse<JsonNode> generateQuote() throws UnirestException{

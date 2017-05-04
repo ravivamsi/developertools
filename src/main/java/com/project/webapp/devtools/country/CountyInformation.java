@@ -69,7 +69,7 @@ public class CountyInformation {
 		return json;
 	}
 	
-	@RequestMapping(value="country/{id}/callingcode", method=RequestMethod.GET)
+	@RequestMapping(value="country/{id}/capital", method=RequestMethod.GET)
 	public JSONObject allCountryInformationByCapital(@PathVariable String id) throws UnirestException, ParseException{
 
 		HttpResponse<JsonNode> response = Unirest.get("https://restcountries-v1.p.mashape.com/capital/"+id)
@@ -116,7 +116,7 @@ public class CountyInformation {
 		return json;
 	}	
 	
-	@RequestMapping(value="country/{id}/continent", method=RequestMethod.GET)
+	@RequestMapping(value="country/{id}/subcontinent", method=RequestMethod.GET)
 	public JSONObject allCountryInformationBySubContinent(@PathVariable String id) throws UnirestException, ParseException{
 		// Sample Request western%2520asia
 		HttpResponse<JsonNode> response = Unirest.get("https://restcountries-v1.p.mashape.com/subregion/"+id)
