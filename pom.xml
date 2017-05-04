@@ -6,7 +6,6 @@
 	<groupId>com.project.webapp</groupId>
 	<artifactId>devtools</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<packaging>war</packaging>
 
 	<name>devtools</name>
 	<description>Springboot Application to Support Developer Tools</description>
