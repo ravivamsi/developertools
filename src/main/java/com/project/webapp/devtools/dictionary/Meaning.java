@@ -12,6 +12,9 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
 
+import com.project.webapp.devtools.model.DictionaryModel;
+import com.project.webapp.devtools.util.ConstantValues;
+
 /**
  * @author Vamsi Ravi
  *
@@ -20,13 +23,12 @@ import org.springframework.web.client.RestTemplate;
 public class Meaning {
 
 	@RequestMapping(value="dictionary/{id}", method=RequestMethod.GET)
-	public String getMeaning(@PathVariable("id") String id){
-//		https://mashape-community-urban-dictionary.p.mashape.com/define?term=
-		RestTemplate restTemplate = new RestTemplate();
-		/*restTemplate.headForHeaders("58Lkq0o1JKmshke2gVhQnQByXO3zp18P2mwjsnaIhmQWmKAsr3", "X-Mashape-Key");
-		restTemplate.headForHeaders("Accept", "text/plain");*/
+	public DictionaryModel getMeaning(@PathVariable("id") String id){
+		DictionaryModel dictionaryModel = new DictionaryModel();
 		Map<String, String> variables = new HashMap<String, String>();
-		String result = restTemplate.getForObject("https://mashape-community-urban-dictionary.p.mashape.com/define?term="+id, String.class, variables);
-		return result;
+		RestTemplate restTemplate = new RestTemplate();
+		dictionaryModel = restTemplate.getForObject(ConstantValues.DICTIONARY_URL+id, DictionaryModel.class, variables );
+		
+		return dictionaryModel;
 	}
 }
