@@ -26,7 +26,7 @@ import com.mashape.unirest.http.exceptions.UnirestException;
 public class Detector {
 
 	@RequestMapping(value="language/detect/{id}", method=RequestMethod.GET)
-	public JSONObject languageDetector(@PathVariable("id") String id) throws ParseException, UnirestException{
+	public JSONObject languageDetector(@PathVariable String id) throws ParseException, UnirestException{
 
 		StringTokenizer stringTokenizer = new StringTokenizer(id);
 		StringBuilder stringBuilder = new StringBuilder();
