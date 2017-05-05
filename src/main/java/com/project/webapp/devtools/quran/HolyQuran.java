@@ -94,11 +94,24 @@ public class HolyQuran {
 		JSONObject json = (JSONObject) parser.parse(response.getBody());
 		return json;
 	}
+
+	@RequestMapping(value="quran/asad/en/ayah/{id}", method=RequestMethod.GET)
+	public JSONObject getQuranAsadEnglishByAyahId(@PathVariable String id) throws UnirestException, ParseException{
+		HttpResponse<String> response = Unirest.get("http://api.alquran.cloud/ayah/"+id)
+				.asString();
+		JSONParser parser = new JSONParser();
+		JSONObject json = (JSONObject) parser.parse(response.getBody());
+		return json;
+	}
 	
-	/*
-http://api.alquran.cloud/ayah/262 - (Text) Returns Muhammad Asad's translation Ayat Al Kursi
-http://api.alquran.cloud/ayah/2:255 - (Text) Returns Muhammad Asad's translation Ayat Al Kursi
-http://api.alquran.cloud/ayah/262/ar.alafasy - (Audio) Returns Mishary Alafasy's recitation of the Ayat Al Kursi
-http://api.alquran.cloud/ayah/262 - (Text) Returns the Arabic text of Ayat Al Kursi*/
+	
+	@RequestMapping(value="quran/asad/en/ayah/{stanza}/{verse}", method=RequestMethod.GET)
+	public JSONObject getQuranAsadEnglishByAyahVerse(@PathVariable("stanza") String stanza, @PathVariable("verse") String verse) throws UnirestException, ParseException{
+		HttpResponse<String> response = Unirest.get("http://api.alquran.cloud/ayah/"+stanza+":"+verse)
+				.asString();
+		JSONParser parser = new JSONParser();
+		JSONObject json = (JSONObject) parser.parse(response.getBody());
+		return json;
+	}
 	
 }
