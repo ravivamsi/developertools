@@ -3,24 +3,17 @@
  */
 package com.project.webapp.devtools.email;
 
-import java.util.HashMap;
-import java.util.Map;
-
+import javax.mail.internet.AddressException;
+import javax.mail.internet.InternetAddress;
+import javax.ws.rs.client.Client;
+import javax.ws.rs.client.ClientBuilder;
+import javax.ws.rs.client.WebTarget;
+	
+import org.glassfish.jersey.client.authentication.HttpAuthenticationFeature;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.client.RestTemplate;
-
-import javax.ws.rs.client.Client;
-import javax.ws.rs.client.ClientBuilder;
-import javax.ws.rs.client.Entity;
-import javax.ws.rs.client.WebTarget;
-
-import javax.ws.rs.core.Form;
-import javax.ws.rs.core.MediaType;
-import org.glassfish.jersey.client.authentication.HttpAuthenticationFeature;
-
 
 import com.project.webapp.devtools.util.ConstantValues;
 
@@ -51,4 +44,15 @@ public class ValidateEmail {
 		
 	}
 	
+	@RequestMapping(value="validate/{email}/email", method=RequestMethod.GET)
+	public static boolean isValidEmailAddress(@PathVariable("email") String email) {
+		   boolean result = true;
+		   try {
+		      InternetAddress emailAddr = new InternetAddress(email);
+		      emailAddr.validate();
+		   } catch (AddressException ex) {
+		      result = false;
+		   }
+		   return result;
+		}
 }
