@@ -3,6 +3,13 @@
  */
 package com.project.webapp.devtools.zip;
 
+import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.TreeMap;
+
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
@@ -30,6 +37,164 @@ public class ZipCodeDetails {
 		JSONParser parser = new JSONParser();
 		JSONObject json = (JSONObject) parser.parse(response.getBody());
 		return json;
+	}
+	
+	@RequestMapping(value="zip/countries", method=RequestMethod.GET)
+	public List<String> getZipCountries(){
+		List<String> countriesList = new ArrayList<String>();
+		
+		countriesList.add("Andorra						AD		AD100 : AD700");
+		countriesList.add("Argentina					AR		1601 : 9431");
+		countriesList.add("American Samoa				AS		96799 : 96799");
+		countriesList.add("Austria						AT		1010 : 9992");
+		countriesList.add("Australia					AU		0200 : 9726");
+		countriesList.add("Bangladesh					BD		1000 : 9461");
+		countriesList.add("Belgium						BE		1000 : 9992");
+		countriesList.add("Bulgaria						BG		1000 : 9974");
+		countriesList.add("Brazil						BR		01000-000 : 99990-000");
+		countriesList.add("Canada						CA		A0A : Y1A");
+		countriesList.add("Switzerland					CH		1000 : 9658");
+		countriesList.add("Czech Republic				CZ		100 00 : 798 62");
+		countriesList.add("Germany						DE		01067 : 99998");
+		countriesList.add("Denmark						DK		0800 : 9990	");
+		countriesList.add("Dominican Republic			DO		10101 : 11906");
+		countriesList.add("Spain						ES		01001 : 52080");
+		countriesList.add("Finland						FI		00002 : 99999");
+		countriesList.add("Faroe Islands				FO		100 : 970");
+		countriesList.add("France						FR	 	01000 : 98799");
+		countriesList.add("Great Britain				GB	 	AB1 : ZE3");
+		countriesList.add("French Guyana				GF	 	97300 : 97390");
+		countriesList.add("Guernsey						GG	 	GY1 : GY9");
+		countriesList.add("Greenland					GL	 	2412 : 3992");
+		countriesList.add("Guadeloupe					GP	 	97100 : 97190");
+		countriesList.add("Guatemala					GT	 	01001 : 22027");
+		countriesList.add("Guam							GU	 	96910 : 96932");
+		countriesList.add("Guyana						GY	 	97312 : 97360");
+		countriesList.add("Croatia						HR	 	10000 : 53296");
+		countriesList.add("Hungary						HU	 	1011 : 9985");
+		countriesList.add("Isle of Man					IM	 	IM1 : IM9");
+		countriesList.add("India						IN	 	110001 : 855126");
+		countriesList.add("Iceland						IS	 	101 : 902");
+		countriesList.add("Italy						IT	 	00010 : 98168");
+		countriesList.add("Jersey						JE	 	JE1 : JE3");
+		countriesList.add("Japan						JP	 	100-0001 : 999-8531");
+		countriesList.add("Liechtenstein				LI	 	9485 : 9498");
+		countriesList.add("Sri Lanka					LK	  	* : 96167");
+		countriesList.add("Lithuania					LT	 	00001 : 99069");
+		countriesList.add("Luxembourg					LU	 	L-1009 : L-9999");
+		countriesList.add("Monaco						MC	 	98000 : 98000");
+		countriesList.add("Moldavia						MD	 	MD-2000 : MD-7731");
+		countriesList.add("Marshall Islands				MH	 	96960 : 96970");
+		countriesList.add("Macedonia					MK	 	1000 : 7550");
+		countriesList.add("Northern Mariana Islands		MP	 	96950 : 96952");
+		countriesList.add("Martinique					MQ	 	97200 : 97290");
+		countriesList.add("Mexico						MX	 	01000 : 99998");
+		countriesList.add("Malaysia						MY	 	01000 : 98859");
+		countriesList.add("Holland						NL	 	1000 : 9999");
+		countriesList.add("Norway						NO	 	0001 : 9991");
+		countriesList.add("New Zealand					NZ	 	0110 : 9893");
+		countriesList.add("Phillippines					PH	 	0400 : 9811");
+		countriesList.add("Pakistan						PK	 	10010 : 97320");
+		countriesList.add("Poland						PL	 	00-001 : 99-440");
+		countriesList.add("Saint Pierre and Miquelon	PM	 	97500 : 97500");
+		countriesList.add("Puerto Rico					PR	 	00601 : 00988");
+		countriesList.add("Portugal						PT	 	1000-001 : 9980-999");
+		countriesList.add("French Reunion				RE	 	97400 : 97490");
+		countriesList.add("Russia						RU	 	101000 : 901993");
+		countriesList.add("Sweden						SE	 	10005 : 98499");
+		countriesList.add("Slovenia						SI	 	1000 : 9600");
+		countriesList.add("Svalbard & Jan Mayen Islands	SJ	 	8099 : 9178");
+		countriesList.add("Slovak Republic				SK	 	010 01 : 992 01");
+		countriesList.add("San Marino					SM	 	47890 : 47899");
+		countriesList.add("Thailand						TH	 	10100 : 96220");
+		countriesList.add("Turkey						TR	 	01000 : 81950");
+		countriesList.add("United States				US	 	00210 : 99950");
+		countriesList.add("Vatican						VA	 	00120 : 00120");
+		countriesList.add("Virgin Islands				VI	 	00801 : 00851");
+		countriesList.add("Mayotte						YT	 	97600 : 97680");
+		countriesList.add("South Africa					ZA	 	0002 : 9992");
+		
+		return countriesList;
+		
+	}
+	
+	@RequestMapping(value="zip/countries/list", method=RequestMethod.GET)
+	public Map<String, String> getZipCountriesList(){
+		Map<String, String> countriesMap = new HashMap<String, String>();
+		
+		countriesMap.put("AD","Andorra								AD100 : AD700");
+		countriesMap.put("AR","Argentina							1601 : 9431");
+		countriesMap.put("AS","American Samoa						96799 : 96799");
+		countriesMap.put("AU","Austria								1010 : 9992");
+		countriesMap.put("AT","Australia							0200 : 9726");
+		countriesMap.put("BD","Bangladesh							1000 : 9461");
+		countriesMap.put("BE","Belgium								1000 : 9992");
+		countriesMap.put("BG","Bulgaria								1000 : 9974");
+		countriesMap.put("BR","Brazil								01000-000 : 99990-000");
+		countriesMap.put("CA","Canada								A0A : Y1A");
+		countriesMap.put("CH","Switzerland							1000 : 9658");
+		countriesMap.put("CZ","Czech Republic						100 00 : 798 62");
+		countriesMap.put("DE","Germany								01067 : 99998");
+		countriesMap.put("DK","Denmark								0800 : 9990	");
+		countriesMap.put("DO","Dominican Republic					10101 : 11906");
+		countriesMap.put("ES","Spain								01001 : 52080");
+		countriesMap.put("FI","Finland								00002 : 99999");
+		countriesMap.put("FO","Faroe Islands						100 : 970");
+		countriesMap.put("FR","France							 	01000 : 98799");
+		countriesMap.put("GB","Great Britain					 	AB1 : ZE3");
+		countriesMap.put("GF","French Guyana					 	97300 : 97390");
+		countriesMap.put("GG","Guernsey							 	GY1 : GY9");
+		countriesMap.put("GL","Greenland						 	2412 : 3992");
+		countriesMap.put("GP","Guadeloupe						 	97100 : 97190");
+		countriesMap.put("GT","Guatemala						 	01001 : 22027");
+		countriesMap.put("GU","Guam								 	96910 : 96932");
+		countriesMap.put("GY","Guyana							 	97312 : 97360");
+		countriesMap.put("HR","Croatia							 	10000 : 53296");
+		countriesMap.put("HU","Hungary							 	1011 : 9985");
+		countriesMap.put("IM","Isle of Man						 	IM1 : IM9");
+		countriesMap.put("IN","India							 	110001 : 855126");
+		countriesMap.put("IS","Iceland							 	101 : 902");
+		countriesMap.put("IT","Italy							 	00010 : 98168");
+		countriesMap.put("JE","Jersey							 	JE1 : JE3");
+		countriesMap.put("JP","Japan							 	100-0001 : 999-8531");
+		countriesMap.put("LI","Liechtenstein					 	9485 : 9498");
+		countriesMap.put("LK","Sri Lanka						  	* : 96167");
+		countriesMap.put("LT","Lithuania						 	00001 : 99069");
+		countriesMap.put("LU","Luxembourg						 	L-1009 : L-9999");
+		countriesMap.put("MC","Monaco							 	98000 : 98000");
+		countriesMap.put("MD","Moldavia							 	MD-2000 : MD-7731");
+		countriesMap.put("MH","Marshall Islands					 	96960 : 96970");
+		countriesMap.put("MK","Macedonia						 	1000 : 7550");
+		countriesMap.put("MP","Northern Mariana Islands			 	96950 : 96952");
+		countriesMap.put("MQ","Martinique						 	97200 : 97290");
+		countriesMap.put("MX","Mexico							 	01000 : 99998");
+		countriesMap.put("MY","Malaysia							 	01000 : 98859");
+		countriesMap.put("NL","Holland							 	1000 : 9999");
+		countriesMap.put("NO","Norway							 	0001 : 9991");
+		countriesMap.put("NZ","New Zealand						 	0110 : 9893");
+		countriesMap.put("PH","Phillippines						 	0400 : 9811");
+		countriesMap.put("PK","Pakistan							 	10010 : 97320");
+		countriesMap.put("PL","Poland							 	00-001 : 99-440");
+		countriesMap.put("PM","Saint Pierre and Miquelon		 	97500 : 97500");
+		countriesMap.put("PR","Puerto Rico						 	00601 : 00988");
+		countriesMap.put("PT","Portugal							 	1000-001 : 9980-999");
+		countriesMap.put("RE","French Reunion					 	97400 : 97490");
+		countriesMap.put("RU","Russia							 	101000 : 901993");
+		countriesMap.put("SE","Sweden							 	10005 : 98499");
+		countriesMap.put("SI","Slovenia							 	1000 : 9600");
+		countriesMap.put("SJ","Svalbard & Jan Mayen Islands		 	8099 : 9178");
+		countriesMap.put("SK","Slovak Republic					 	010 01 : 992 01");
+		countriesMap.put("SM","San Marino						 	47890 : 47899");
+		countriesMap.put("TH","Thailand							 	10100 : 96220");
+		countriesMap.put("TR","Turkey							 	01000 : 81950");
+		countriesMap.put("US","United States					 	00210 : 99950");
+		countriesMap.put("VA","Vatican							 	00120 : 00120");
+		countriesMap.put("VI","Virgin Islands					 	00801 : 00851");
+		countriesMap.put("YT","Mayotte							 	97600 : 97680");
+		countriesMap.put("ZA","South Africa						 	0002 : 9992");
+		
+		return countriesMap;
+		
 	}
 	
 	/*
