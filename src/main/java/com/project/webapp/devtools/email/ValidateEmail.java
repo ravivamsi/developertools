@@ -65,7 +65,7 @@ public class ValidateEmail {
 	
 	@RequestMapping(value="verify/{id}/email", method=RequestMethod.GET)
 	public JSONObject verifyEmailAddress(@PathVariable String id) throws UnirestException, ParseException{
-		HttpResponse<String> response = Unirest.get("https://ajith-Verify-email-address-v1.p.mashape.com/varifyEmail?email=ravivamsi%40yahoo.com")
+		HttpResponse<String> response = Unirest.get("https://ajith-Verify-email-address-v1.p.mashape.com/varifyEmail?email="+id)
 				.header("X-Mashape-Key", "58Lkq0o1JKmshke2gVhQnQByXO3zp18P2mwjsnaIhmQWmKAsr3")
 				.header("Accept", "application/json")
 				.asString();
