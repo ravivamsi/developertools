@@ -3,9 +3,13 @@
 Utility API for the Developers: One Stop for all the Developer Daily Tasks
 
 Some of the Rest WebServices Developed so far: 
--- UUID Generator 
+-- UUID Generator - Completed
+-- CodeFormatter - JSON, XML - Completed
+-- JSON Parser - Completed
+-- Converters - Completed
+-- Checkers - Completed
 -- Random Generators 
--- Math Tools 
+-- Math Tools - Completed
 -- String Manipulation 
 -- BarCodeGenerators 
 -- Network Test Tools 
@@ -16,8 +20,8 @@ Some of the Rest WebServices Developed so far:
 -- VIN 			
 -- Weather			
 -- String 		
--- Dictionary	
--- Abbrevations
+-- Dictionary	- Completed
+-- Abbrevations  - Completed
 -- Bible		
 -- Quran		
 -- Zip Code	Details
@@ -25,7 +29,6 @@ Some of the Rest WebServices Developed so far:
 
 Planning to work the following for the project: 
 -- CodeBeautifier 
--- CodeFormatter 
 -- CodeMinifier 
 -- Encryptors and Decryptors
 -- Decompiler 
@@ -33,7 +36,6 @@ Planning to work the following for the project:
 -- Password Generators 
 -- Timer 
 -- Stop Watch
--- JSON Parser
 
 
 If you have questions or need help with any of the above services. Feel free to reach me
