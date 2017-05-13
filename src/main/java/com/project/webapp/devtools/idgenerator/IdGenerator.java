@@ -3,8 +3,6 @@
  */
 package com.project.webapp.devtools.idgenerator;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.UUID;
 
 import org.springframework.web.bind.annotation.PathVariable;
@@ -33,12 +31,14 @@ public class IdGenerator {
 	
 	// Generate Multiple UUID Version 4
 	@RequestMapping(value = "generate/uuid4/{id}", method=RequestMethod.GET)
-	public List<UUID> generateMultipleuuid(@PathVariable Long id){
-		List<UUID> uuidList = new ArrayList<UUID>(); 
+	public UUIDModel generateMultipleuuid(@PathVariable Long id){
+		String uuids = "";
+		UUIDModel uuidModel = new UUIDModel();
 		for(int i=0; i < id; i++){
-			uuidList.add(UUID.randomUUID());
+			uuids = uuids + UUID.randomUUID() + "\n";			
 		}
-		return uuidList;
+		uuidModel.setUuid(uuids);
+		return uuidModel;
 	}
 
 	
@@ -53,14 +53,14 @@ public class IdGenerator {
 	
 	// Generate Multiple UUID Version 4 without dashes
 	@RequestMapping(value = "generate/uuid4/dash/{id}", method=RequestMethod.GET)
-	public List<UUIDModel> generateMultipleuuidWithoutDashes(@PathVariable Long id){
-		List<UUIDModel> uuidList = new ArrayList<UUIDModel>(); 
+	public UUIDModel generateMultipleuuidWithoutDashes(@PathVariable Long id){		
+		String uuids = "";
 		for(int i=0; i < id; i++){
-			UUIDModel uuidModel = new UUIDModel();
-			uuidModel.setUuid(UUID.randomUUID().toString().replaceAll("-", ""));
-			uuidList.add(uuidModel);
+			uuids = uuids + UUID.randomUUID().toString().replaceAll("-", "") + "\n";			
 		}
-		return uuidList;
+		UUIDModel uuidModel = new UUIDModel();
+		uuidModel.setUuid(uuids);
+		return uuidModel;
 	}
 
 	// Generate One UUID Version 1
@@ -71,12 +71,14 @@ public class IdGenerator {
 		
 	// Generate Multiple UUID Version 1
 	@RequestMapping(value = "generate/uuid1/{id}", method=RequestMethod.GET)
-	public List<UUID> generateVersionOneMultipleuuid(@PathVariable Long id){
-		List<UUID> uuidList = new ArrayList<UUID>(); 
+	public UUIDModel generateVersionOneMultipleuuid(@PathVariable Long id){
+		String uuids = "" ; 
 		for(int i=0; i < id; i++){
-			uuidList.add(timeBasedGenerator.generate());
+			uuids = uuids + timeBasedGenerator.generate() + "\n" ;			
 		}
-		return uuidList;
+		UUIDModel model = new UUIDModel();
+		model.setUuid(uuids);
+		return model;
 	}
 		
 	// Generate One UUID Version 4 without dashes 
@@ -90,15 +92,14 @@ public class IdGenerator {
 	
 	// Generate Multiple UUID Version 4 without dashes
 	@RequestMapping(value = "generate/uuid1/dash/{id}", method=RequestMethod.GET)
-	public List<UUIDModel> generateVersionOneMultipleuuidWithoutDashes(@PathVariable Long id){
-		List<UUIDModel> uuidList = new ArrayList<UUIDModel>(); 
+	public UUIDModel generateVersionOneMultipleuuidWithoutDashes(@PathVariable Long id){
+		String uuids = "";
 		for(int i=0; i < id; i++){
-			UUIDModel uuidModel = new UUIDModel();
-			uuidModel.setUuid(timeBasedGenerator.generate().toString().replaceAll("-", ""));
-			uuidList.add(uuidModel);
-			
+			uuids = uuids + timeBasedGenerator.generate().toString().replaceAll("-", "") + "\n";		
 		}
-		return uuidList;
+		UUIDModel model = new UUIDModel();
+		model.setUuid(uuids);
+		return model;
 	}
 		
 }

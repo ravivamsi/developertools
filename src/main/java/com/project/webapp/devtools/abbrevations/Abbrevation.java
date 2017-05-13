@@ -3,7 +3,9 @@
  */
 package com.project.webapp.devtools.abbrevations;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import org.json.simple.JSONArray;
@@ -37,7 +39,7 @@ public class Abbrevation {
 
 	
 	@RequestMapping(value="abbrevation/{id}", method=RequestMethod.GET)
-	public JSONObject getPopularAbbrevation(@PathVariable("id") String id) throws UnirestException, ParseException{
+	public List<JSONObject> getPopularAbbrevation(@PathVariable("id") String id) throws UnirestException, ParseException{
 		
 		HttpResponse<String> response = Unirest.get("https://daxeel-abbreviations-v1.p.mashape.com/popular/"+id)
 				.header("X-Mashape-Key", "58Lkq0o1JKmshke2gVhQnQByXO3zp18P2mwjsnaIhmQWmKAsr3")
@@ -45,7 +47,9 @@ public class Abbrevation {
 		
 		JSONParser parser = new JSONParser();
 		JSONObject json = (JSONObject) parser.parse(response.getBody());
-		return json;
+		List<JSONObject> res = new ArrayList<JSONObject>();
+		res.add(json);
+		return res;
 	
 	}
 	
