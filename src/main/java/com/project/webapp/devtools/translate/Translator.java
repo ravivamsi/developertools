@@ -11,6 +11,11 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @RestController
 public class Translator {
+	
+	
+//	pexjdXR4NjstWzGU68l4IQ%3D%3D APIKEY
+//	Translate 
+//	https://gateway.watsonplatform.net/language-translator/api/v2/translate?source=en&target=es&text=hello
 
 	/*Azerbaijan	az	Maltese	mt
 Albanian	sq	Macedonian	mk
