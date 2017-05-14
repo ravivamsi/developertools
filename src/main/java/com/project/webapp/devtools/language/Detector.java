@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.project.webpp.devtools.language;
+package com.project.webapp.devtools.language;
 
 import java.util.StringTokenizer;
 

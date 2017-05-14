@@ -19,7 +19,8 @@ Some of the Rest WebServices Developed so far:
 -- Morse Code	
 -- VIN 			
 -- Weather			
--- String 		
+-- String 	
+-- Timer - Completed	
 -- Dictionary	- Completed
 -- Abbrevations  - Completed
 -- Bible		
@@ -34,7 +35,6 @@ Planning to work the following for the project:
 -- Decompiler 
 -- File Conversion Tools 
 -- Password Generators 
--- Timer 
 -- Stop Watch
 
 
