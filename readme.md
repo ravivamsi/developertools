@@ -25,7 +25,7 @@ Some of the Rest WebServices Developed so far:
 -- Abbrevations  - Completed
 -- Bible		
 -- Quran		
--- Zip Code	Details
+-- Zip Code	Details 
 -- Dummy Data Generators	
 
 Planning to work the following for the project: 
