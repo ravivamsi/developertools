@@ -14,10 +14,10 @@ Some of the Rest WebServices Developed so far:
 -- Stop Watch - Completed
 -- Dictionary	- Completed
 -- Abbrevations  - Completed
--- Bible		
--- Quran		
--- Zip Code	Details
--- Weather	 
+-- Bible	- On track	
+-- Quran	- On track	
+-- Zip Code	Details - On track
+-- Weather	 - On track
 -- Dummy Data Generators	
 
 Planning to work the following for the project: 
@@ -28,7 +28,7 @@ Planning to work the following for the project:
 -- File Conversion Tools 
 -- Password Generators 
 -- String Manipulation 
--- BarCodeGenerators 
+-- BarCode Generators 
 -- Network Test Tools 
 -- Currency 	
 -- Quote		
