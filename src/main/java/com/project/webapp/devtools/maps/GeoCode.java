@@ -24,10 +24,7 @@ public class GeoCode {
 
 	@RequestMapping(value="geocode/{id}",method=RequestMethod.GET)
 	public JSONObject getGeoCode(@PathVariable String id) throws UnirestException, ParseException{
-		/*HttpResponse<JsonNode> response = Unirest.get("https://michele-zonca-google-geocoding.p.mashape.com/geocode/json?address=1000+Harness+Dr%2C+San+Ramon%2C+CA+94583&sensor=true")
-.header("X-Mashape-Key", "58Lkq0o1JKmshke2gVhQnQByXO3zp18P2mwjsnaIhmQWmKAsr3")
-.header("Accept", "application/json")
-.asJson();*/
+
 		HttpResponse<String> response = Unirest.get("https://michele-zonca-google-geocoding.p.mashape.com/geocode/json?address="+id+"&sensor=true")
 				.header("X-Mashape-Key", "58Lkq0o1JKmshke2gVhQnQByXO3zp18P2mwjsnaIhmQWmKAsr3")
 				.header("Accept", "application/json")

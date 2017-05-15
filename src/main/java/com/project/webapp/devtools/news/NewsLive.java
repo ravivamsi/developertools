@@ -72,7 +72,12 @@ Default: empty (all sources returned)*/
 		JSONObject json = (JSONObject) parser.parse(response.getBody());
 		return json;
 	}
-
+	
+	/*
+	 * sortby - top, latest, popular
+	 * 
+	 * 
+*/
 	@RequestMapping(value="news/articles/{source}/{sortby}",method=RequestMethod.GET)
 	public JSONObject getNewsArticleBySourceAndSort( @PathVariable("source") String source, @PathVariable("sortby") String sortby) throws UnirestException, ParseException{
 		HttpResponse<String> response = Unirest.get("https://newsapi.org/v1/articles?source="+source+"&sortBy="+sortby+"&apiKey=2df3c32ef6ff497b8c422bdf33fdcf71")
