@@ -52,7 +52,7 @@ Default: empty (all sources returned)*/
 	
 	@RequestMapping(value="news/sources/language/{language}",method=RequestMethod.GET)
 	public JSONObject getNewsSourcesByLanguage(@PathVariable("language") String language) throws UnirestException, ParseException{
-		HttpResponse<String> response = Unirest.get("https://newsapi.org/v1/sources?category="+language)
+		HttpResponse<String> response = Unirest.get("https://newsapi.org/v1/sources?language="+language)
 				.asString();		
 		JSONParser parser = new JSONParser();
 		JSONObject json = (JSONObject) parser.parse(response.getBody());
@@ -66,7 +66,7 @@ Default: empty (all sources returned)*/
 	Default: empty (all sources returned)*/
 	@RequestMapping(value="news/sources/country/{country}",method=RequestMethod.GET)
 	public JSONObject getNewsSourcesByCountry( @PathVariable("country") String country) throws UnirestException, ParseException{
-		HttpResponse<String> response = Unirest.get("https://newsapi.org/v1/sources?category="+country)
+		HttpResponse<String> response = Unirest.get("https://newsapi.org/v1/sources?country="+country)
 				.asString();		
 		JSONParser parser = new JSONParser();
 		JSONObject json = (JSONObject) parser.parse(response.getBody());

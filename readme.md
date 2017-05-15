@@ -18,7 +18,7 @@ Some of the Rest WebServices Developed so far:
 -- Quran	- On track	
 -- Zip Code	Details - On track
 -- Weather	 - On track
--- Dummy Data Generators	
+
 
 Planning to work the following for the project: 
 -- CodeBeautifier 
@@ -36,6 +36,7 @@ Planning to work the following for the project:
 -- VIN 					
 -- String 	
 -- Random Generators 
+-- Dummy Data Generators	
 
 If you have questions or need help with any of the above services. Feel free to reach me
 

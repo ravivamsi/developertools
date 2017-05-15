@@ -9,7 +9,6 @@
 
 	<name>devtools</name>
 	<description>Springboot Application to Support Developer Tools</description>
-	<packaging>war</packaging>
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
