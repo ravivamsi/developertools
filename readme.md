@@ -38,6 +38,13 @@ Planning to work the following for the project:
 -- Random Generators 
 -- Dummy Data Generators	
 
+Mobile Applications:
+-- News - OnTrack - iOS and Android
+-- Dictionary and Abbrevation
+-- Bible, Quran and Mahabharath
+-- Currency
+-- VIN
+
 If you have questions or need help with any of the above services. Feel free to reach me
 
 Contact:

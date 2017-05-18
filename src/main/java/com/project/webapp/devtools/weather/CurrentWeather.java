@@ -30,7 +30,7 @@ public class CurrentWeather {
 	}
 	
 	@RequestMapping(value="weather/{zip}/{country}/current", method=RequestMethod.GET)
-	public String currentWeatherByZipAndCountryCode(@PathVariable("zip") String zip, @PathVariable("country") String country){
+	public String currentWeatherByZipAndCountryCode(@PathVariable("zip") Long zip, @PathVariable("country") String country){
 		RestTemplate restTemplate = new RestTemplate();
 		Map<String, String> variables = new HashMap<String, String>();
 		String result = restTemplate.getForObject("api.openweathermap.org/data/2.5/weather?zip="+zip+","+country+"&APPID="+ConstantValues.API_KEY_WEATHER, String.class, variables);
