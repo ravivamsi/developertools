@@ -14,11 +14,10 @@ Some of the Rest WebServices Developed so far:
 -- Stop Watch - Completed
 -- Dictionary	- Completed
 -- Abbrevations  - Completed
--- Bible	- On track	
--- Quran	- On track	
+-- Bible	- Completed
+-- Quran	- Completed	
 -- Zip Code	Details - On track
 -- Weather	 - On track
-
 
 Planning to work the following for the project: 
 -- CodeBeautifier 
@@ -40,10 +39,10 @@ Planning to work the following for the project:
 
 Mobile Applications:
 -- News - OnTrack - iOS and Android
--- Dictionary and Abbrevation
--- Bible, Quran and Mahabharath
--- Currency
--- VIN
+-- Dictionary and Abbrevation  - iOS and Android
+-- Bible, Quran and Mahabharath  - iOS and Android
+-- Currency  - iOS and Android
+-- VIN  - iOS and Android
 
 If you have questions or need help with any of the above services. Feel free to reach me
 
