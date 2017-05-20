@@ -34,6 +34,7 @@ Planning to work the following for the project:
 -- Morse Code	
 -- VIN 					
 -- String 	
+-- Time Zone
 -- Random Generators 
 -- Dummy Data Generators	
 

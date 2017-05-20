@@ -39,6 +39,97 @@ public class ZipCodeDetails {
 		return json;
 	}
 	
+	@RequestMapping(value="zip/countries/codes/keyvalue", method=RequestMethod.GET)
+	public com.google.gson.Gson getZipCountriesCodesKeyValue(){
+	
+		com.google.gson.Gson countryCodeKeyValue =new com.google.gson.Gson();
+		
+		
+		
+		return countryCodeKeyValue;
+		
+	}
+	
+	
+	@RequestMapping(value="zip/countries/codes", method=RequestMethod.GET)
+	public List<String> getZipCountriesCodes(){
+		List<String> countriesList = new ArrayList<String>();
+		
+		countriesList.add("AD");
+		countriesList.add("AR");
+		countriesList.add("AS");
+		countriesList.add("AT");
+		countriesList.add("AU");
+		countriesList.add("BD");
+		countriesList.add("BE");
+		countriesList.add("BG");
+		countriesList.add("BR");
+		countriesList.add("CA");
+		countriesList.add("CH");
+		countriesList.add("CZ");
+		countriesList.add("DE");
+		countriesList.add("DK");
+		countriesList.add("DO");
+		countriesList.add("ES");
+		countriesList.add("FI");
+		countriesList.add("FO");
+		countriesList.add("FR");
+		countriesList.add("GB");
+		countriesList.add("GF");
+		countriesList.add("GG");
+		countriesList.add("GL");
+		countriesList.add("GP");
+		countriesList.add("GT");
+		countriesList.add("GU");
+		countriesList.add("GY");
+		countriesList.add("HR");
+		countriesList.add("HU");
+		countriesList.add("IM");
+		countriesList.add("IN");
+		countriesList.add("IS");
+		countriesList.add("IT");
+		countriesList.add("JE");
+		countriesList.add("JP");
+		countriesList.add("LI");
+		countriesList.add("LK");
+		countriesList.add("LT");
+		countriesList.add("LU");
+		countriesList.add("MC");
+		countriesList.add("MD");
+		countriesList.add("MH");
+		countriesList.add("MK");
+		countriesList.add("MP");
+		countriesList.add("MQ");
+		countriesList.add("MX");
+		countriesList.add("MY");
+		countriesList.add("NL");
+		countriesList.add("NO");
+		countriesList.add("NZ");
+		countriesList.add("PH");
+		countriesList.add("PK");
+		countriesList.add("PL");
+		countriesList.add("PM");
+		countriesList.add("PR");
+		countriesList.add("PT");
+		countriesList.add("RE");
+		countriesList.add("RU");
+		countriesList.add("SE");
+		countriesList.add("SI");
+		countriesList.add("SJ");
+		countriesList.add("SK");
+		countriesList.add("SM");
+		countriesList.add("TH");
+		countriesList.add("TR");
+		countriesList.add("US");
+		countriesList.add("VA");
+		countriesList.add("VI");
+		countriesList.add("YT");
+		countriesList.add("ZA");
+		
+		return countriesList;
+		
+	}
+	
 	@RequestMapping(value="zip/countries", method=RequestMethod.GET)
 	public List<String> getZipCountries(){
 		List<String> countriesList = new ArrayList<String>();
