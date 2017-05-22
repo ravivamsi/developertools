@@ -43,9 +43,6 @@ public class ZipCodeDetails {
 	public com.google.gson.Gson getZipCountriesCodesKeyValue(){
 	
 		com.google.gson.Gson countryCodeKeyValue =new com.google.gson.Gson();
-		
-		
-		
 		return countryCodeKeyValue;
 		
 	}

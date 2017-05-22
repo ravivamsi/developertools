@@ -8,6 +8,7 @@ import java.awt.Graphics2D;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
+import java.net.URL;
 import java.util.EnumMap;
 import java.util.Map;
 
@@ -24,6 +25,9 @@ import com.google.zxing.WriterException;
 import com.google.zxing.common.BitMatrix;
 import com.google.zxing.qrcode.QRCodeWriter;
 import com.google.zxing.qrcode.decoder.ErrorCorrectionLevel;
+import com.mashape.unirest.http.HttpResponse;
+import com.mashape.unirest.http.Unirest;
+import com.mashape.unirest.http.exceptions.UnirestException;
 
 /**
  * @author Vamsi Ravi
@@ -32,6 +36,16 @@ import com.google.zxing.qrcode.decoder.ErrorCorrectionLevel;
 @RestController
 public class QRCode {
 
+	@RequestMapping(value="qrcode/{text}/backcolor/{backcolor}/forecolor/{forecolor}/pixel/{pixel}/type/{type}/ecl/{ecl}", method=RequestMethod.GET)
+	public String generateQRBarCode(@PathVariable("text") String text, @PathVariable("backcolor") String backcolor,@PathVariable("forecolor") String forecolor,@PathVariable("pixel") String pixel, @PathVariable("type") String type,@PathVariable("ecl") String ecl) throws WriterException, UnirestException{
+	
+		HttpResponse<String> response = Unirest.get("https://pierre2106j-qrcode.p.mashape.com/api?backcolor="+backcolor+"&ecl=L+%7C+M%7C+Q+%7C+H&forecolor="+forecolor+"&pixel="+pixel+"&text="+text+"&type=text+%7C+url+%7C+tel+%7C+sms+%7C+email")
+				.header("X-Mashape-Key", "58Lkq0o1JKmshke2gVhQnQByXO3zp18P2mwjsnaIhmQWmKAsr3")
+				.header("Accept", "text/plain")
+				.asString();
+		return response.getBody();	
+	}
+	
 	@RequestMapping(value="/barcode/{id}/qrcode", method=RequestMethod.GET)
 	public BitMatrix generateBarCode(@PathVariable String id) throws WriterException{
 		
