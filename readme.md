@@ -16,7 +16,7 @@ Some of the Rest WebServices Developed so far:
 -- Abbrevations  - Completed
 -- Bible	- Completed
 -- Quran	- Completed	
--- Zip Code	Details - On track
+-- Zip Code	Details - Completed
 -- Weather	 - On track
 
 Planning to work the following for the project: 
