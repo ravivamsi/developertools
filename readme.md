@@ -39,11 +39,12 @@ Planning to work the following for the project:
 -- Dummy Data Generators	
 
 Mobile Applications:
--- News - OnTrack - iOS and Android
+-- News - OnTrack - iOS and Android - Completed
 -- Dictionary and Abbrevation  - iOS and Android
 -- Bible, Quran and Mahabharath  - iOS and Android
 -- Currency  - iOS and Android
 -- VIN  - iOS and Android
+-- Holidays
 
 If you have questions or need help with any of the above services. Feel free to reach me
 

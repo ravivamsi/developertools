@@ -32,9 +32,7 @@ public class RegularExpression {
 	public String[] regexSplitWithLimit(@PathVariable("regex") String regex, @PathVariable("string") String string, @PathVariable("limit") Integer limit){
 		return string.split(regex,limit);
 	}
-	/*
-
-
+	
 	@RequestMapping(value="regex/{regex}/string/{string}/match", method=RequestMethod.GET)
 	public Boolean regexMatch(@PathVariable("regex") String regex, @PathVariable("string") String string){
 		Pattern pattern = Pattern.compile(regex);
@@ -47,11 +45,11 @@ public class RegularExpression {
 		return string.replaceAll(regex, string);
 	}
 	
-	@RequestMapping(value="regex/{regex}/string/{string}/split/{limit}", method=RequestMethod.GET)
+	@RequestMapping(value="regex/{regex}/string/{string}/replace/first", method=RequestMethod.GET)
 	public String regexReplaceFirst(@PathVariable("regex") String regex, @PathVariable("string") String string){
 		return string.replaceFirst(regex, string);
 	}
 	
-*/		
+	
 	
 }

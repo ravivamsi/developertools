@@ -37,11 +37,11 @@ public class RandomNumbers {
 	public List<Integer> generateRandomUniqueNumber(@PathVariable("number") Integer number, @PathVariable("min") Integer min, @PathVariable("max") Integer max){
 	List<Integer> integerList = new ArrayList<Integer>();
 	
-	IntStream.range(min, max).boxed()
+/*	IntStream.range(min, max).boxed()
     .collect(Collectors.toCollection(ArrayList::new));
 	Collections.shuffle(integerList);
 	//integerList.subList(min, max);
-	return integerList;
+*/	return integerList;
 	}
 	
 	
