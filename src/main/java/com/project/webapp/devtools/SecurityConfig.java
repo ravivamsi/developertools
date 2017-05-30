@@ -22,9 +22,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
 	   @Override
 	   protected void configure(HttpSecurity http) throws Exception {
 	     http.authorizeRequests().antMatchers("/").permitAll().and().authorizeRequests().antMatchers("/console/**").permitAll(); 
-	     http.authorizeRequests().antMatchers("/imgs/**").permitAll(); 
-	     http.authorizeRequests().antMatchers("/admin/**").hasRole("ADMIN");
-	     http.authorizeRequests().antMatchers("/**").hasRole("USER").and().formLogin();
+	     //http.authorizeRequests().antMatchers("/imgs/**").permitAll(); 
+	     //http.authorizeRequests().antMatchers("/admin/**").hasRole("ADMIN");
+	     //http.authorizeRequests().antMatchers("/**").hasRole("USER").and().formLogin();
 	    
 	     // add this line to use H2 web console
 	     http.csrf().disable();

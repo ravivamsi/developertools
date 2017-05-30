@@ -3,9 +3,14 @@
  */
 package com.project.webapp.devtools.bible;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
+import java.util.Map.Entry;
+import java.util.regex.Pattern;
 
+import org.assertj.core.data.MapEntry;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
@@ -31,10 +36,10 @@ public class Bible {
 		
 		HttpResponse<String> response = Unirest.get("https://ajith-holy-bible.p.mashape.com/GetChapter?Book="+book+"&chapter="+chapter)
 				.header("X-Mashape-Key", "58Lkq0o1JKmshke2gVhQnQByXO3zp18P2mwjsnaIhmQWmKAsr3")
-				.asString();
-		
+				.asString();		
 		JSONParser parser = new JSONParser();
 		JSONObject json = (JSONObject) parser.parse(response.getBody());
+		//json.put("Output", splitByNumber(json.get("Output").toString()));
 		return json;
 		
 	}
@@ -71,17 +76,36 @@ public class Bible {
 	}
 	
 	@RequestMapping(value="oldtestment/books", method=RequestMethod.GET)
-	public Map<Integer, String> getOldTestmentBooks(){
+	public List<String> getOldTestmentBooks(){
 		Map<Integer,String> oldTestmentMap = oldTestMent();
-		
-		return oldTestmentMap;
+		List<String> arList = new ArrayList<String>();
+		for(Entry<Integer, String> entry: oldTestmentMap.entrySet()) {
+	        arList.add(entry.getValue());
+	    }
+		System.out.println(arList);
+		return arList;
 	}
 	
 	@RequestMapping(value="newtestment/books", method=RequestMethod.GET)
-	public Map<Integer, String> getNewTestmentBooks(){
+	public List<String> getNewTestmentBooks(){
 		Map<Integer,String> newTestmentMap = newTestMent();
-		
-		return newTestmentMap;
+		List<String> arList = new ArrayList<String>();
+		for(Entry<Integer, String> entry: newTestmentMap.entrySet()) {
+	        arList.add(entry.getValue());
+	    }
+		System.out.println(arList);
+		return arList;
+	}
+	
+	public String splitByNumber(String source){
+		String splittedString = "";
+		String regex = "\\d";
+		Pattern p = Pattern.compile(regex);
+	    String[] items = p.split(source);
+	    for (String s : items) {
+	      splittedString = splittedString + s + "\n";
+	    }
+		return splittedString ;
 	}
 	
 	 public static Map<Integer, String> oldTestMent()
