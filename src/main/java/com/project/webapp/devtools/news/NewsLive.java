@@ -52,7 +52,7 @@ Default: empty (all sources returned)*/
 	
 	@RequestMapping(value="news/sources/language/{language}",method=RequestMethod.GET)
 	public JSONObject getNewsSourcesByLanguage(@PathVariable("language") String language) throws UnirestException, ParseException{
-		HttpResponse<String> response = Unirest.get("https://newsapi.org/v1/sources?category="+language)
+		HttpResponse<String> response = Unirest.get("https://newsapi.org/v1/sources?language="+language)
 				.asString();		
 		JSONParser parser = new JSONParser();
 		JSONObject json = (JSONObject) parser.parse(response.getBody());
@@ -66,13 +66,18 @@ Default: empty (all sources returned)*/
 	Default: empty (all sources returned)*/
 	@RequestMapping(value="news/sources/country/{country}",method=RequestMethod.GET)
 	public JSONObject getNewsSourcesByCountry( @PathVariable("country") String country) throws UnirestException, ParseException{
-		HttpResponse<String> response = Unirest.get("https://newsapi.org/v1/sources?category="+country)
+		HttpResponse<String> response = Unirest.get("https://newsapi.org/v1/sources?country="+country)
 				.asString();		
 		JSONParser parser = new JSONParser();
 		JSONObject json = (JSONObject) parser.parse(response.getBody());
 		return json;
 	}
-
+	
+	/*
+	 * sortby - top, latest, popular
+	 * 
+	 * 
+*/
 	@RequestMapping(value="news/articles/{source}/{sortby}",method=RequestMethod.GET)
 	public JSONObject getNewsArticleBySourceAndSort( @PathVariable("source") String source, @PathVariable("sortby") String sortby) throws UnirestException, ParseException{
 		HttpResponse<String> response = Unirest.get("https://newsapi.org/v1/articles?source="+source+"&sortBy="+sortby+"&apiKey=2df3c32ef6ff497b8c422bdf33fdcf71")

@@ -8,24 +8,16 @@ Some of the Rest WebServices Developed so far:
 -- JSON Parser - Completed
 -- Converters - Completed
 -- Checkers - Completed
--- Random Generators 
 -- Math Tools - Completed
--- String Manipulation 
--- BarCodeGenerators 
--- Network Test Tools 
--- News 		
--- Currency 	
--- Quote		
--- Morse Code	
--- VIN 			
--- Weather			
--- String 		
+-- News - Completed		
+-- Timer - Completed	
+-- Stop Watch - Completed
 -- Dictionary	- Completed
 -- Abbrevations  - Completed
--- Bible		
--- Quran		
--- Zip Code	Details
--- Dummy Data Generators	
+-- Bible	- Completed
+-- Quran	- Completed	
+-- Zip Code	Details - Completed
+-- Weather	 - On track
 
 Planning to work the following for the project: 
 -- CodeBeautifier 
@@ -34,9 +26,25 @@ Planning to work the following for the project:
 -- Decompiler 
 -- File Conversion Tools 
 -- Password Generators 
--- Timer 
--- Stop Watch
+-- String Manipulation 
+-- BarCode Generators 
+-- Network Test Tools 
+-- Currency 	
+-- Quote		
+-- Morse Code	
+-- VIN 					
+-- String 	
+-- Time Zone
+-- Random Generators 
+-- Dummy Data Generators	
 
+Mobile Applications:
+-- News - OnTrack - iOS and Android - Completed
+-- Dictionary and Abbrevation  - iOS and Android
+-- Bible, Quran and Mahabharath  - iOS and Android
+-- Currency  - iOS and Android
+-- VIN  - iOS and Android
+-- Holidays
 
 If you have questions or need help with any of the above services. Feel free to reach me
 

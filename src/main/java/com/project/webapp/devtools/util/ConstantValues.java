@@ -48,4 +48,5 @@ public class ConstantValues {
 	public static final String API_KEY_EMAIL_VALIDATOR = "key-b95d9ba1ec38b0125998ef9470a718c9";
 	public static final String API_KEY_PHONENUMBER_VALIDATOR = "1856dd3429c9974962d4ab4982201491";
 	public static final String API_KEY_MASHAPE = "58Lkq0o1JKmshke2gVhQnQByXO3zp18P2mwjsnaIhmQWmKAsr3";
+	public static final String API_KEY_HOLIDAYS = "56780317-6ca7-4028-a30f-593f209ea2f2";
 }

@@ -34,14 +34,13 @@ import com.google.zxing.qrcode.decoder.ErrorCorrectionLevel;
 public class Aztec {
 
 	@RequestMapping(value="/barcode/{id}/aztec", method=RequestMethod.GET)
-	public void generateBarCode(@PathVariable String id) throws WriterException{
+	public BitMatrix generateBarCode(@PathVariable String id) throws WriterException{
 		
 		int size = 250;
-		String fileType = "png";
+		/*String fileType = "png";
 		String filePath = "file://C:/Testing/Code128Generated.png";
-		File myFile = new File(filePath);
+		File myFile = new File(filePath);*/
 		
-		try{
 			Map<EncodeHintType, Object> hintMap = new EnumMap<EncodeHintType, Object>(EncodeHintType.class);
 			hintMap.put(EncodeHintType.CHARACTER_SET, "UTF-8");
 	
@@ -53,7 +52,9 @@ public class Aztec {
 			BitMatrix byteMatrix = aztecWriter.encode(id, BarcodeFormat.AZTEC, size,
 					size, hintMap);
 			
-			int CrunchifyWidth = byteMatrix.getWidth();
+			return byteMatrix;
+			
+			/*int CrunchifyWidth = byteMatrix.getWidth();
 		
 			BufferedImage image = new BufferedImage(CrunchifyWidth, CrunchifyWidth,
 					BufferedImage.TYPE_INT_RGB);
@@ -72,12 +73,11 @@ public class Aztec {
 				}
 			}
 			
+			
+			
 			ImageIO.write(image, fileType, myFile);
+		*/
 		
-		}
-		catch (IOException e){
-			e.printStackTrace();
-		}
 	}
 
 
